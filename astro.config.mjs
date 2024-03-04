@@ -4,5 +4,7 @@ import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://dubbele-boks.github.io',
+  base: '/dentistry-frontend',
   integrations: [vue(), UnoCSS()]
 });
