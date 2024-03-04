@@ -1,0 +1,20 @@
+name: update versioning
+on: 
+    push:
+        branches:
+            - main
+            - development
+jobs:
+    update:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout your repository using git
+            uses: actions/checkout@v4
+          - name: install node
+            uses: actions/setup-node@v4
+            with:
+                node-version: '20.x'
+          - name: run semver
+            run: |
+                npm i
+                npm run semantic-release
