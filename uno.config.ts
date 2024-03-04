@@ -1,6 +1,6 @@
 import { defineConfig } from "unocss";
 import presetWind from "@unocss/preset-wind";
-import presetWebFonts from "@unocss/preset-web-fonts";
+// import presetWebFonts from "@unocss/preset-web-fonts";
 import presetIcons from "@unocss/preset-icons";
 
 export default defineConfig({
