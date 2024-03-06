@@ -1,0 +1,60 @@
+@startuml classDiagram
+class Person {
+    + id: Integer
+    + firstName: String
+    + lastName: String
+    + middleName: String
+    + birthDay: Date
+    + email: String
+    + phoneNumber: String
+    + address: Address
+}
+class Patient {
+    + healthInsurer: String
+    + customerNumber: Integer
+}
+class Dentist {}
+class Assistent {}
+class Address {
+    + id: Integer
+    + street: String
+    + city: String
+    + postalCode: String
+    + houseNumber: Integer
+    + addition: String
+}
+class Appointment {
+    + id: Integer
+    + dentist: Dentist
+    + patient: Patient
+    + treatment: List<Treatment>
+    + date: DateTime
+}
+class Treatment {
+    + id: Integer
+    + name: String
+    + minutes: Integer
+    + price: Double
+}
+class Room {
+    + id: Integer
+    + roomNumber: Integer
+    + rented: Boolean
+}
+class Note {
+    + id: Integer
+    + title: String
+    + description: String
+    + appointment: Appointment
+}
+
+
+Person <|-- Patient : extends
+Person <|-- Dentist : extends
+Person <|-- Assistent : extends
+Person "1" --> "1" Address
+Person "1" --{ "1..*" Appointment
+Appointment "1" --> "1" Room
+Appointment "1" --> "1" Note
+Appointment "1" --{ "1..*" Treatment
+@enduml
