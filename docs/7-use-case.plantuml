@@ -1,0 +1,7 @@
+@startuml analytical dashboard
+skinparam actorStyle awesome
+:dentist: as user
+user --> (analytical) 
+(analytical) --> (view) : extends
+(login) --> (view): include
+@enduml

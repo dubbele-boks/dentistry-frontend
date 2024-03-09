@@ -1,0 +1,7 @@
+@startuml insight in agenda
+skinparam actorStyle awesome
+:dentist: as user
+user --> (agenda) 
+(agenda) --> (inzien) : extends
+(login) --> (inzien): include
+@enduml

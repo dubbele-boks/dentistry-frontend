@@ -1,0 +1,22 @@
+@startuml agenda activity
+start
+repeat :login; 
+:submit;
+backward :error;
+repeat while (login successful) is (No) not (Yes)
+    :redirect to homepage;
+    :Click on agenda;
+    :Click on a appointment;
+    :Click on subtab notes;
+    switch (action)
+        case (add)
+            :fill in title;
+            :fill in description;
+            :click save;
+        case (remove)
+            :click on red 'remove' button;
+            :confirm remove prompt;   
+    endswitch
+    :return to appointment;
+    end
+@enduml

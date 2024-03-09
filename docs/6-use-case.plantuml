@@ -1,0 +1,11 @@
+@startuml edit notes
+skinparam actorStyle awesome
+:dentist: as user
+user --> (notes) 
+(notes) -> (edit) : extends
+(notes) -> (add) : extends
+(notes) -> (remove) : extends
+(login) .> (edit): include
+(login) .> (add): include
+(login) .> (remove): include
+@enduml

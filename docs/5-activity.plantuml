@@ -1,0 +1,10 @@
+@startuml agenda activity
+start
+repeat :login; 
+:submit;
+backward :error;
+repeat while (login successful) is (No) not (Yes)
+    :redirect to homepage;
+    :Click on agenda;
+    end
+@enduml
